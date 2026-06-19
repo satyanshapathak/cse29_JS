@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Factorial Calculator</h2>
+
+        <input type="number" id="num" placeholder="Enter a number">
+
+        <button onclick="calculateFactorial()">Calculate</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateFactorial() {
+            let n = parseInt(document.getElementById("num").value);
+
+            if (n < 0) {
+                document.getElementById("result").innerHTML =
+                    "Factorial is not defined for negative numbers.";
+                return;
+            }
+
+            let factorial = 1;
+
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Factorial of " + n + " is " + factorial;
+        }
+    </script>
+
+</body>
+</html>
